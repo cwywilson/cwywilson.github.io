@@ -135,6 +135,19 @@
     <section class="section">
       <h2>Software Projects</h2>
       <div class="cards">
+        <!-- Positive Degree Days -->
+        <div class="card">
+          <div class="card-content">
+            <h3>Positive Degree Days (PDD)</h3>
+            <p>Positive Degree Days quantify melt potential by summing daily average temperatures above 0 °C. This Colab notebook demonstrates how to calculate PDD using reanalysis temperature fields accessed via the Copernicus Climate Change Service (C3S) API.</p>
+            <ul>
+              <li>Retrieve temperature data from the C3S Climate Data Store</li>
+              <li>Calculate daily averages &amp; PDD time series</li>
+              <li>Integrate PDD into glacier melt models</li>
+            </ul>
+            <a href="https://colab.research.google.com/drive/1PGJteIIV9NPtgzjuyJANsEVZClN-KlL6?usp=sharing" target="_blank">View Notebook</a>
+          </div>
+        </div>
         <!-- KMeans project -->
         <div class="card">
           <div class="card-content">
@@ -159,19 +172,6 @@
               <li>Export GLIMS‑ready shapefiles and processing logs</li>
             </ul>
             <a href="https://github.com/cwywilson/glims-submission-notebook" target="_blank">View Repository</a>
-          </div>
-        </div>
-        <!-- Snow cover mapping -->
-        <div class="card">
-          <div class="card-content">
-            <h3>Glacier Snow‑Cover Mapping</h3>
-            <p>Builds on Landsat 8/9 and Sentinel‑2 imagery to map seasonal snow‑covered areas, compute accumulation area ratios and derive snowline altitudes. Enhancements include quality‑filtered snowlines, elevation‑binned SLA extraction and automated time‑series analysis.</p>
-            <ul>
-              <li>Query and classify multispectral imagery</li>
-              <li>Compute time‑series of Snow Cover Ratio &amp; SLA</li>
-              <li>Plot trends in SLA and maximum summer snowlines</li>
-            </ul>
-            <a href="https://github.com/cwywilson/glacier-snow-cover-mapping-for-ANP-and-SNP" target="_blank">View Repository</a>
           </div>
         </div>
       </div>
@@ -213,19 +213,6 @@
               <li>Visualise outlines and centre‑lines</li>
             </ul>
             <a href="https://github.com/cwywilson/OGGM-Centerline" target="_blank">View Notebook</a>
-          </div>
-        </div>
-        <!-- Positive Degree Days -->
-        <div class="card">
-          <div class="card-content">
-            <h3>Positive Degree Days (PDD)</h3>
-            <p>Positive Degree Days are calculated from daily average temperatures; melting occurs only when temperatures exceed 0 °C. This Colab notebook derives PDD from ERA5‑Land reanalysis, offering a key metric for modelling glacier melt.</p>
-            <ul>
-              <li>Access ERA5‑Land reanalysis temperature data</li>
-              <li>Calculate daily average temperatures &amp; PDD</li>
-              <li>Integrate PDD into melt modelling studies</li>
-            </ul>
-            <a href="https://colab.research.google.com/drive/1PGJteIIV9NPtgzjuyJANsEVZClN-KlL6?usp=sharing" target="_blank">View Notebook</a>
           </div>
         </div>
       </div>
