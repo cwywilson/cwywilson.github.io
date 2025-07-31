@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glacier Research Software &amp; Dataset</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+    header {
+      width: 100%;
+      height: 45vh;
+      background: #2a4d69;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8em;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      max-width: 700px;
+    }
+    main {
+      padding: 40px 8%;
+    }
+    .section {
+      margin-bottom: 60px;
+    }
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #2a4d69;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      flex: 1 1 calc(33% - 20px);
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-content h3 {
+      margin-top: 0;
+      color: #24415a;
+    }
+    .card-content p {
+      flex: 1;
+      margin: 10px 0;
+    }
+    .card-content ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .card-content li {
+      margin: 4px 0;
+    }
+    .card-content a {
+      align-self: flex-start;
+      padding: 8px 16px;
+      background: #2a4d69;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    .card-content a:hover {
+      background: #1b3445;
+    }
+    .dataset {
+      background: #f0f5f8;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .dataset h3 {
+      margin-top: 0;
+      color: #24415a;
+    }
+    footer {
+      background: #2a4d69;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .cards {
+        flex-direction: column;
+      }
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Glacier Research Software &amp; Data</h1>
+      <p>Explore the suite of open-source tools and datasets developed for precise glacier analysis, snowline extraction and DEM co‑registration in support of cutting-edge cryosphere research.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Software Section -->
+    <section class="section">
+      <h2>Software Projects</h2>
+      <div class="cards">
+        <!-- Positive Degree Days -->
+        <div class="card">
+          <div class="card-content">
+            <h3>Positive Degree Days (PDD)</h3>
+            <p>Positive Degree Days quantify melt potential by summing daily average temperatures above 0 °C. This Colab notebook demonstrates how to calculate PDD using reanalysis temperature fields accessed via the Copernicus Climate Change Service (C3S) API.</p>
+            <ul>
+              <li>Retrieve temperature data from the C3S Climate Data Store</li>
+              <li>Calculate daily averages &amp; PDD time series</li>
+              <li>Integrate PDD into glacier melt models</li>
+            </ul>
+            <a href="https://colab.research.google.com/drive/1PGJteIIV9NPtgzjuyJANsEVZClN-KlL6?usp=sharing" target="_blank">View Notebook</a>
+          </div>
+        </div>
+        <!-- KMeans project -->
+        <div class="card">
+          <div class="card-content">
+            <h3>KMeans‑Derived Pseudo‑Labels</h3>
+            <p>This machine‑learning pipeline uses PCA and K‑Means clustering to automatically generate pseudo‑labels for Sentinel‑2 imagery. Random Forest and SVM classifiers then identify snow, ice and ground pixels, enabling snowline detection and Snow Cover Ratio computation.</p>
+            <ul>
+              <li>Download and preprocess satellite scenes</li>
+              <li>Train on unsupervised pseudo‑labels &amp; classify terrain</li>
+              <li>Extract snow‑ice boundaries and calculate snowline altitudes</li>
+            </ul>
+            <a href="https://github.com/cwywilson/KMeans-Derived-Pseudo-Labels-for-Machine-Learning-Classification" target="_blank">View Repository</a>
+          </div>
+        </div>
+        <!-- GLIMS submission -->
+        <div class="card">
+          <div class="card-content">
+            <h3>GLIMS Submission Notebook</h3>
+            <p>A streamlined notebook for preparing glacier outlines and centre lines for the Global Land Ice Measurements from Space (GLIMS) database. It repairs geometry, re‑projects outlines to GLIMS standards and writes compliant shapefiles with full provenance logs.</p>
+            <ul>
+              <li>Repair and merge 1960 &amp; 2023 glacier outlines</li>
+              <li>Generate centre‑lines and metadata for GLIMS</li>
+              <li>Export GLIMS‑ready shapefiles and processing logs</li>
+            </ul>
+            <a href="https://github.com/cwywilson/glims-submission-notebook" target="_blank">View Repository</a>
+          </div>
+        </div>
+      </div>
+      <div class="cards" style="margin-top:30px;">
+        <!-- Co-registration with reference DEMs -->
+        <div class="card">
+          <div class="card-content">
+            <h3>Co‑registration with Reference DEMs</h3>
+            <p>Provides workflows for co‑registering historical and modern Digital Elevation Models using the xDEM library. It pre‑processes DEMs, masks stable terrain, applies robust co‑registration algorithms and generates elevation‑change maps with uncertainty estimates.</p>
+            <ul>
+              <li>Consistent reprojection and nodata handling</li>
+              <li>Deramp &amp; Nuth–Kaab algorithms for co‑registration</li>
+              <li>Elevation‑change maps, residual plots &amp; histograms</li>
+            </ul>
+            <a href="https://github.com/cwywilson/Co-registration-with-reference-DEMs" target="_blank">View Repository</a>
+          </div>
+        </div>
+        <!-- Shapefile Buffer and Uncertainty -->
+        <div class="card">
+          <div class="card-content">
+            <h3>Shapefile Buffer &amp; Uncertainty</h3>
+            <p>A Python utility that calculates area uncertainty for glacier outlines. It reprojects shapefiles to UTM, applies positive and negative buffers and computes uncertainty zones following Paul et al. (2013).</p>
+            <ul>
+              <li>Load &amp; re‑project glacier outlines</li>
+              <li>Generate ±0.5 m buffer zones</li>
+              <li>Compute original, buffered &amp; uncertainty areas</li>
+            </ul>
+            <a href="https://github.com/cwywilson/Uncertainty-of-glacier-extent-delineation" target="_blank">View Repository</a>
+          </div>
+        </div>
+        <!-- OGGM Centerline Extraction -->
+        <div class="card">
+          <div class="card-content">
+            <h3>Glacier Centre‑Line Extraction (OGGM)</h3>
+            <p>This notebook demonstrates how to extract glacier centre lines using the Open Global Glacier Model (OGGM). It downloads RGI glacier data, preprocesses it, computes centre‑lines using OGGM routing algorithms and visualises the results.</p>
+            <ul>
+              <li>Download and preprocess RGI glacier data</li>
+              <li>Compute centre‑lines with OGGM</li>
+              <li>Visualise outlines and centre‑lines</li>
+            </ul>
+            <a href="https://github.com/cwywilson/OGGM-Centerline" target="_blank">View Notebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dataset Section -->
+    <section class="section">
+      <h2>Datasets</h2>
+      <div class="dataset">
+        <h3>Glacier Shapefiles &amp; Centre Lines</h3>
+        <p>Ten glacier outlines and corresponding centre lines have been prepared and submitted to the Randolph Glacier Inventory (RGI). These vector datasets complement the software tools above and provide high‑quality base data for future analysis.</p>
+
+        <h3>Annual Maximum Summer Snowline Dataset (2013–2024)</h3>
+        <p>Cheung (2025) curated annual maximum summer snowline elevations for six glaciers in the Canadian Arctic. Snowlines were derived using Snow‑Elevation Histogram Analysis (SEHA) and binned Accumulation Area Ratio methods from Landsat 8/9 and Sentinel‑2 imagery. Fields include dates, snowline altitudes, snow cover area and accumulation area ratio metrics. The dataset forms a valuable benchmark for climate trend analysis and model validation.</p>
+        <p><strong>Glaciers:</strong> Highway, Bylot D20s, Coronation, Fountain, Turner and White.</p>
+        <a href="https://doi.org/10.5281/zenodo.16592920" target="_blank">Access Dataset on Zenodo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Glacier Research – Developed by Wilson Cheung and contributors</p>
+  </footer>
+</body>
+</html>
